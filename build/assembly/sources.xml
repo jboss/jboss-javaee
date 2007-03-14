@@ -1,15 +1,16 @@
 <assembly>
+  <id>sources</id>
   <formats>
     <format>jar</format>
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
   <fileSets>
     <fileSet>
-      <directory>../ejb-api/target/classes</directory>
+      <directory>../ejb-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../transaction-api/target/classes</directory>
+      <directory>../transaction-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
   </fileSets>

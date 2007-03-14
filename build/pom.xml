@@ -21,10 +21,10 @@
     <version>1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>javaee</artifactId>
+  <artifactId>jboss-javaee</artifactId>
   <version>5.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>JBoss JavaEE 5.0 Build</name>
+  <name>JBoss JavaEE Build</name>
   <url>http://www.jboss.com</url>
   <description>
     The JBoss JavaEE API classes
@@ -35,18 +35,18 @@
     <finalName>${artifactId}</finalName>
     <resources>
       <resource>
-        <directory>src</directory>
+        <directory>src/etc</directory>
         <includes>
-          <include>etc/**</include>
+          <include>**/*</include>
         </includes>
         <filtering>true</filtering>
       </resource>
     </resources>
     <testResources>
       <testResource>
-        <directory>src</directory>
+        <directory>src/resources</directory>
         <includes>
-          <include>resources/**</include>
+          <include>**/*</include>
         </includes>
         <filtering>true</filtering>
       </testResource>
@@ -54,12 +54,21 @@
     <plugins>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>assembly</goal>
+            </goals>
+          </execution>
+        </executions>
         <configuration>
           <descriptors>
             <descriptor>assembly/bin.xml</descriptor>
-            <descriptor>assembly/src.xml</descriptor>
+            <descriptor>assembly/sources.xml</descriptor>
           </descriptors>
         </configuration>
+        <inherited>false</inherited>
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -86,8 +95,8 @@
     </repository>
   </repositories>
   <modules>
-    <module>../ejb-api</module>
     <module>../transaction-api</module>
+    <module>../ejb-api</module>
   </modules>
   <reporting>
     <plugins>
