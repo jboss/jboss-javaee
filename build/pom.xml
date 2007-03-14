@@ -21,10 +21,10 @@
     <version>1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>jboss-javaee</artifactId>
+  <artifactId>javaee</artifactId>
   <version>5.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>JBoss JavaEE Build</name>
+  <name>JBoss JavaEE 5.0 Build</name>
   <url>http://www.jboss.com</url>
   <description>
     The JBoss JavaEE API classes
@@ -52,6 +52,15 @@
       </testResource>
     </testResources>
     <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+            <descriptor>assembly/bin.xml</descriptor>
+            <descriptor>assembly/src.xml</descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>

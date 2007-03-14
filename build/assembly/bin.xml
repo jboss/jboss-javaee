@@ -1,0 +1,18 @@
+<assembly>
+  <id>bin</id>
+  <formats>
+    <format>jar</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <moduleSets>
+    <moduleSet>
+      <includes>
+        <include>jboss:ejb-api</include>
+        <include>jboss:transaction-api</include>
+      </includes>
+      <binaries>
+        <unpack>true</unpack>
+      </binaries>
+    </moduleSet>
+  </moduleSets>
+</assembly>
