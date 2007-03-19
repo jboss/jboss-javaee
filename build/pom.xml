@@ -114,8 +114,8 @@ age=JBossBuildMaven -->
     </repository>
   </repositories>
   <modules>
-    <module>../transaction-api</module>
-    <module>../ejb-api</module>
+    <module>../jboss-transaction-api</module>
+    <module>../jboss-ejb-api</module>
   </modules>
   <reporting>
     <plugins>

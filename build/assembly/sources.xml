@@ -6,11 +6,11 @@
   <includeBaseDirectory>false</includeBaseDirectory>
   <fileSets>
     <fileSet>
-      <directory>../ejb-api/src/main</directory>
+      <directory>../jboss-ejb-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../transaction-api/src/main</directory>
+      <directory>../jboss-transaction-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
   </fileSets>

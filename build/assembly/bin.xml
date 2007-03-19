@@ -5,11 +5,11 @@
   <includeBaseDirectory>false</includeBaseDirectory>
   <fileSets>
     <fileSet>
-      <directory>../ejb-api/target/classes</directory>
+      <directory>../jboss-ejb-api/target/classes</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../transaction-api/target/classes</directory>
+      <directory>../jboss-transaction-api/target/classes</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
   </fileSets>
