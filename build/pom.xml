@@ -24,7 +24,7 @@
   <artifactId>jboss-javaee</artifactId>
   <version>5.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>JBoss JavaEE Build</name>
+  <name>JBoss JavaEE 5.0 Build</name>
   <url>http://www.jboss.com</url>
   <description>
     The JBoss JavaEE API classes
@@ -80,7 +80,26 @@
           </includes>
           <skip>true</skip>
         </configuration>
-      </plugin>    
+      </plugin>
+      <!-- FIXME: test of deploy plugin, to be replaced by new version of jboss-parent -->
+      <plugin>
+        <groupId>jboss.maven-plugins</groupId>
+        <artifactId>jboss-deploy-maven-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jboss-deploy</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <!-- In order to use this setting jboss.repository.root must be set on the command line or in
+            settings.xml.  More information can be found here: http://wiki.jboss.org/wiki/Wiki.jsp?p
+age=JBossBuildMaven -->
+          <jbossDeployRoot>${jboss.repository.root}</jbossDeployRoot>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <repositories>
