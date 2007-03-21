@@ -9,6 +9,10 @@
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
+      <directory>../jboss-persistence-api/target/classes</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+    <fileSet>
       <directory>../jboss-transaction-api/target/classes</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
