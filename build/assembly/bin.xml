@@ -13,6 +13,10 @@
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
+      <directory>../jboss-jms-api/target/classes</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+    <fileSet>
       <directory>../jboss-persistence-api/target/classes</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
