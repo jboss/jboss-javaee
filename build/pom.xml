@@ -101,6 +101,7 @@
   <modules>
     <module>../jboss-ejb-api</module>
     <module>../jboss-jacc-api</module>
+    <module>../jboss-jca-api</module>
     <module>../jboss-jms-api</module>
     <module>../jboss-persistence-api</module>
     <module>../jboss-transaction-api</module>

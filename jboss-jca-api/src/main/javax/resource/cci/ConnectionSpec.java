@@ -1,0 +1,37 @@
+/*
+* JBoss, Home of Professional Open Source
+* Copyright 2005, JBoss Inc., and individual contributors as indicated
+* by the @authors tag. See the copyright.txt in the distribution for a
+* full listing of individual contributors.
+*
+* This is free software; you can redistribute it and/or modify it
+* under the terms of the GNU Lesser General Public License as
+* published by the Free Software Foundation; either version 2.1 of
+* the License, or (at your option) any later version.
+*
+* This software is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+* Lesser General Public License for more details.
+*
+* You should have received a copy of the GNU Lesser General Public
+* License along with this software; if not, write to the Free
+* Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+* 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+*/
+package javax.resource.cci;
+
+/**
+ * An ConnectionSpec holds connection specific properties for use by a
+ * ConnectionFactory in creating a Connection.n Connection in order to execute
+ * a function on the underlying resource.
+ * 
+ * The ConnectionSpec interface should be implemented as a JavaBean in order
+ * for ease of tool support.
+ * 
+ * A standard set of properties are defined in the specification. In addition
+ * an implementation may implement additional properties.
+ */
+public interface ConnectionSpec
+{
+}
