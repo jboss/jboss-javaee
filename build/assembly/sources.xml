@@ -26,6 +26,10 @@
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
+      <directory>../jboss-servlet-api/src/main</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+    <fileSet>
       <directory>../jboss-transaction-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
