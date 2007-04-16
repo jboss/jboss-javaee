@@ -14,6 +14,18 @@
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
+      <directory>../jboss-jad-api/src/main</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>../jboss-jaxr-api/src/main</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>../jboss-jaxs-api/src/main</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+    <fileSet>
       <directory>../jboss-jca-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
