@@ -1,0 +1,13 @@
+<projectDescription>
+  <name>jboss-jaspi-api</name>
+  <comment>The Java Authentication SPI for Containers 1.0-PR API classes</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>
