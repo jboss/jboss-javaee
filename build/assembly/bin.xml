@@ -13,6 +13,10 @@
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
+      <directory>../jboss-jaspi-api/target/classes</directory>
+      <outputDirectory>/</outputDirectory>
+    </fileSet>
+    <fileSet>
       <directory>../jboss-jad-api/target/classes</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
