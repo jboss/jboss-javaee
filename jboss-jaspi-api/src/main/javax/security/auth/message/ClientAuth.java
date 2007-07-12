@@ -21,8 +21,6 @@
   */
 package javax.security.auth.message;
 
-import java.util.Map;
-
 import javax.security.auth.Subject;
 
 //$Id$
@@ -38,16 +36,17 @@ import javax.security.auth.Subject;
 public interface ClientAuth
 {
    /**
-    * Remove module specific principals and credentials from the subject.
-    * @param subject the Subject instance from which the Principals and 
-    *                credentials are to be removed.
-    * @param sharedState a Map for modules to save state across a sequence 
-    *                of calls from secureRequest to validateResponse 
-    *                returning AuthStatus.PROCEED
-    * @return
+    * Remove implementation specific principals and credentials from the subject.
+    * @param messageInfo - A contextual object that encapsulates the client request 
+    *                      and server response objects, and that may be used to save 
+    *                      state across a sequence of calls made to the methods of 
+    *                      this interface for the purpose of completing a secure 
+    *                      message exchange.
+    * @param subject - The Subject instance from which the Principals and credentials 
+    *                      are to be removed. 
     * @throws AuthException if an error occurs during the Subject processing.
     */
-   public AuthStatus cleanSubject( Subject subject, Map sharedState)
+   public void cleanSubject( MessageInfo messageInfo, Subject subject)
    throws AuthException;
    
    /**
@@ -55,16 +54,17 @@ public interface ClientAuth
     * 
     * <p>Sign and encrpt the service request, for example.</p>
     * 
-    * @param authParam an authentication parameter that encapsulates the 
-    *                  client request and server response objects.
-    * @param client a Subject that represents the source of the service request, 
-    *               or null. It may be used by modules to retrieve Principals 
-    *               and credentials necessary to secure the request. The module 
-    *               may use a CallbackHandler to obtain any additional information 
-    *               necessary to secure the request. Newly obtained or validated 
-    *               credentials may be stored back into the Subject object.
-    * @param sharedState a Map for modules to save state across a sequence of calls 
-    *               from secureRequest to validateResponse returning AuthStatus.PROCEED
+    * @param messageInfo - A contextual object that encapsulates the client request 
+    *                      and server response objects, and that may be used to save 
+    *                      state across a sequence of calls made to the methods of 
+    *                      this interface for the purpose of completing a secure 
+    *                      message exchange.
+    * @param clientSubject - A Subject that represents the source of the service request,
+    *                      or null. It may be used by the method implementation as the 
+    *                      source of Principals or credentials to be used to secure 
+    *                      the request. If the Subject is not null, the method 
+    *                      implementation may add additional Principals or credentials 
+    *                      (pertaining to the source of the service request) to the Subject.
     * @return an AuthStatus object representing the completion status of the processing 
     *         performed by the module.
     *         <ul>
@@ -88,27 +88,37 @@ public interface ClientAuth
     *               message. The runtime must discontinue its processing of the message 
     *               exchange.
     */
-   public AuthStatus secureRequest(AuthParam authParam,Subject client, Map sharedState)
+   public AuthStatus secureRequest(MessageInfo messageInfo, Subject clientSubject)
    throws AuthException;
    
    /**
     * <p>Validate a received service response.</p>
     * 
-    * <p>Decrypt and verify a signature on the response, for example.</p>
+    * <p>This method is called to transform the mechanism-specific response message 
+    * acquired by calling getResponseMessage (on messageInfo) into the validated 
+    * application message to be returned to the message processing runtime. If 
+    * the response message is a (mechanism-specific) meta-message, the method 
+    * implementation must attempt to transform the meta-message into the next 
+    * mechanism-specific request message to be sent by the runtime.</p>
     * 
-    * @param authParam an authentication parameter that encapsulates the client 
-    *                  request and server response objects.
-    * @param client a Subject that represents the recipient of the service response, 
-    *               or null. It may be used by modules to retrieve Principals and 
-    *               credentials necessary to validate the response. The module may use
-    *               a CallbackHandler to obtain any additional information necessary 
-    *               to validate the response. Newly obtained information may be stored 
-    *               back into the Subject object.
-    * @param service a Subject that represents the source of the service response, 
-    *               or null. It may be used by modules to store Principals and credentials 
-    *               validated in the response.
-    * @param sharedState a Map for modules to save state across a sequence of calls from 
-    *               secureRequest to validateResponse returning AuthStatus.PROCEED
+    * @param messageInfo - A contextual object that encapsulates the client 
+    *                      request and server response objects, and that may be 
+    *                      used to save state across a sequence of calls made to 
+    *                      the methods of this interface for the purpose of 
+    *                      completing a secure message exchange.
+    * 
+    * @param clientSubject - A Subject that represents the recipient of the 
+    *                      service response, or null. It may be used by the method 
+    *                      implementation as the source of Principals or credentials 
+    *                      to be used to validate the response. If the Subject is 
+    *                      not null, the method implementation may add additional 
+    *                      Principals or credentials (pertaining to the recipient 
+    *                      of the service request) to the Subject.
+    *                  
+    * @param serviceSubject - A Subject that represents the source of the service 
+    *                      response, or null. If the Subject is not null, the method 
+    *                      implementation may add additional Principals or credentials 
+    *                      (pertaining to the source of the service response) to the Subject.
     * @return an AuthStatus object representing the completion status of the processing 
     *         performed by the module.
     *         <ul>
@@ -130,7 +140,7 @@ public interface ClientAuth
     *           </ul>
     * @throws AuthException
     */
-   public AuthStatus validateResponse(AuthParam authParam, Subject client, 
-         Subject service, Map sharedState)
+   public AuthStatus validateResponse(MessageInfo messageInfo, Subject clientSubject, 
+         Subject serviceSubject)
    throws AuthException;
 }

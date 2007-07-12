@@ -21,6 +21,7 @@
   */
 package javax.security.auth.message.callback;
 
+import javax.security.auth.Subject;
 import javax.security.auth.callback.Callback;
 
 //$Id$
@@ -38,6 +39,7 @@ public class PasswordValidationCallback implements Callback
    private char[] password;
    
    private boolean resultOfAuthentication = false;
+   private Subject subject;
    
    /** 
     * Create a new PasswordValidationCallback.
@@ -45,8 +47,9 @@ public class PasswordValidationCallback implements Callback
     * @param username the username to authenticate
     * @param password the user’s password, which may be null.
     */
-   public PasswordValidationCallback(String username, char[] password)
+   public PasswordValidationCallback(Subject subject, String username, char[] password)
    {
+      this.subject = subject;
       this.username = username;
       this.password = password;
    }
@@ -70,6 +73,11 @@ public class PasswordValidationCallback implements Callback
    public char[] getPassword()
    {
       return this.password;
+   }
+   
+   public Subject getSubject()
+   {
+      return this.subject;
    }
    
    /**

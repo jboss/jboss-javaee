@@ -23,6 +23,7 @@ package javax.security.auth.message.config;
 
 import java.util.Map;
 
+import javax.security.auth.Subject;
 import javax.security.auth.message.AuthException;
 
 /**
@@ -72,6 +73,6 @@ public interface ServerAuthConfig extends AuthConfig
     *                 given operation, or null (indicating that no modules are configured).
     * @throws AuthException if this operation fails.
     */
-   public ServerAuthContext getAuthContext(String operation, Map properties) 
-   throws AuthException;
+   public ServerAuthContext getAuthContext(String authContextID,
+         Subject serviceSubject, Map properties) throws AuthException;
 }

@@ -22,7 +22,7 @@
 package javax.security.auth.message.config;
 
 import javax.security.auth.message.AuthException;
-import javax.security.auth.message.AuthParam;
+import javax.security.auth.message.MessageInfo;
 
 //$Id$
 
@@ -44,7 +44,9 @@ public interface AuthConfig
     *         object or null if the configuration object pertains to an unspecified 
     *         application context.
     */
-   String getContextID();
+   String getAppContext();
+   
+   String getAuthContextID(MessageInfo messageInfo);
    
    /**
     * Get the message layer name of this authentication context configuration object.
@@ -53,19 +55,7 @@ public interface AuthConfig
     */
    String getMessageLayer();
    
-   /**
-    * Get the operation identifier corresponding to the request and response objects 
-    * encapsulated in authParam.
-    * 
-    * @param authParam an AuthParam containing the messages for which the corresponding 
-    *                  operation is to be determined.
-    * @return the operation identifier related to the encapsulated request and response 
-    *                 objects, or null.
-    * @throws java.lang.IllegalArgumentException - if the type of the message objects 
-    *                incorporated in authParam are not compatible with the message types 
-    *                supported by this authentication context configuration object.
-    */
-   String getOperation(AuthParam authParam);
+   boolean isProtected();
    
    /**
     * Causes a dynamic anthentication context configuration object to update its internal 

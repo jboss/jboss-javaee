@@ -57,7 +57,7 @@ public interface ClientAuthModule extends ClientAuth
     *         module will attempt to support any message type. This method never 
     *         returns null.
     */
-   public java.lang.Class[] getSupportedMessageTypes();
+   public Class[] getSupportedMessageTypes();
    
    /**
     * <p>Initialize this module with request and response message policies to 

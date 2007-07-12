@@ -22,6 +22,12 @@
 package javax.security.auth.message; 
 
 /** 
+ *  This class defines a message authentication policy.
+    A ClientAuthContext uses this class to communicate (
+    at module initialization time) request and response
+    message protection policies to its ClientAuthModule objects. 
+    A ServerAuthContext uses this class to communicate request 
+    and response message protection policies to its ServerAuthModule objects.
  *  @author <a href="mailto:Anil.Saldhana@jboss.org">Anil Saldhana@jboss.org</a>
  *  @author Charlie Lai, Ron Monzillo (Javadoc for JSR-196)</a> 
  *  @since  May 11, 2006 
@@ -30,19 +36,23 @@ package javax.security.auth.message;
 public class MessagePolicy
 { 
    protected TargetPolicy[] targetPolicies = null;
+   private boolean mandatory;
    
    /** 
     * Create a MessagePolicy instance with an array of target policies.
     * 
     * @param targetPolicies an array of target policies.
+    * @param mandatory - A boolean value indicating whether the MessagePolicy 
+    *                    is mandatory or optional.
     * @throws IllegalArgumentException if the specified targetPolicies is null.
     */
-   public MessagePolicy(TargetPolicy[] targetPolicies)
+   public MessagePolicy(TargetPolicy[] targetPolicies, boolean mandatory)
    {
       if( targetPolicies == null)
          throw new IllegalArgumentException("specified targetPolicies is null");
       
-      this.targetPolicies = targetPolicies;
+      this.targetPolicies = targetPolicies; 
+      this.mandatory = mandatory;
    }
    
    /**
@@ -64,6 +74,11 @@ public class MessagePolicy
       return this.targetPolicies;
    }
    
+   public boolean isMandatory()
+   {
+      return this.mandatory;
+   }
+   
    /**
     * This interface is implemented by objects that represent and perform message targeting 
     * on behalf of authentication modules.</p>
@@ -81,7 +96,7 @@ public class MessagePolicy
        * @return an Object representing the target, or null when the target could not be found 
        *                  in the AuthParam.
        */
-      public Object get(AuthParam authParam);
+      public Object get(MessageInfo messageInfo);
       
       /** 
        * Put the Object into the AuthParam at the location identified by the target.
@@ -89,7 +104,7 @@ public class MessagePolicy
        *               into which the object is to be put.
        * @param data
        */
-      public void put(AuthParam authParam, Object data);
+      public void put(MessageInfo messageInfo, Object data);
       
       /**
        * Remove the Object identified by the Target from the AuthParam.
@@ -97,7 +112,7 @@ public class MessagePolicy
        * @param authParam the AuthParam containing the request or response message from 
        *                  which the target is to be removed.
        */
-      public void remove(AuthParam authParam);
+      public void remove(MessageInfo messageInfo);
    }
     
    public static class TargetPolicy
@@ -155,18 +170,27 @@ public class MessagePolicy
       /**
        * A URI fragment that represents a recipient entity authentication policy AUTHENTICATE_RECIPIENT_CONTENT
        */
-      public static final String AUTHENTICATE_RECIPIENT = "http://jboss.org/security/auth/container/auth_recipient";
+      public static final String AUTHENTICATE_SENDER = "http://jboss.org/security/auth/container/auth_sender";
       
       /**
        * A URI fragment that represents a source entity authentication policy AUTHENTICATE_SOURCE_CONTENT
        */
-      public static final String AUTHENTICATE_SOURCE = "http://jboss.org/security/auth/container/auth_source";
+      public static final String AUTHENTICATE_RECIPIENT = "http://jboss.org/security/auth/container/auth_recipient";
       
       /**
        * A URI fragment that represents a data origin authentication policy
        */
-      public static final String AUTHENTICATE_SOURCE_CONTENT = "http://jboss.org/security/auth/container/auth_source_content";
+      public static final String AUTHENTICATE_CONTENT = "http://jboss.org/security/auth/container/auth_content";
        
+      /**
+       * Get the ProtectionPolicy identifier. An identifier may represent a 
+       * conceptual protection policy (as is the case with the static identifiers 
+       * defined within this interface) or it may identify a procedural policy expression 
+       * or plan that may be more difficult to categorize in terms of a conceptual identifier.
+       * @return A String containing a policy identifier. This interface defines some 
+       *         policy identifier constants. Configuration systems may define and employ 
+       *         other policy identifiers values.
+       */
       public String getID();
    }
    

@@ -86,7 +86,7 @@ public abstract class AuthConfigFactory
    private static final String FACTORY_PROP = "authconfigprovider.factory";
    
    /** The default AuthConfigFactory implementation */
-   private static final String DEFAULT_FACTORY_NAME = 
+   static final String DEFAULT_FACTORY_SECURITY_PROPERTY = 
       "org.jboss.security.auth.message.config.JBossAuthConfigFactory";
    
    public AuthConfigFactory()
@@ -236,6 +236,9 @@ public abstract class AuthConfigFactory
    public abstract String registerConfigProvider( String className, Map properties,String layer,
            String appContext,  String description) throws AuthException, SecurityException;
    
+   public abstract java.lang.String registerConfigProvider(AuthConfigProvider provider,
+          String layer,  String appContext,  String description);
+   
    public abstract boolean removeRegistration( String registrationID);
    
    public static void setFactory(AuthConfigFactory factory)
@@ -271,32 +274,11 @@ public abstract class AuthConfigFactory
        *                  was registered. the returned value may be null.
        */
       String getMessageLayer();
+      
+      public boolean isPersistent();
    }
    
-   /**
-    * <p>A Listener that may associated with a provider registration by a user 
-    * of the registration. The Listener will be notified if the corresponding 
-    * provider is unregistered or replaced.</p>    
-    */
-   public static interface RegistrationListener
-   {
-      /**
-       * Notify the listener that a registration with which it was associated, was 
-       * replaced or unregistered. When a RegistrationListener is associated with a 
-       * provider registration within the factory, the factory must call its notify 
-       * method when the corresponding registration is unregistered or replaced.
-       * 
-       * @param layer a String identifying the message layer(s) corresponding to 
-       *              registration for which the listerner is being notified.
-       * @param appContext a String value identifying the application context(s) 
-       *              corresponding to registration for which the listerner is being 
-       *              notified. The factory detaches the listener from the 
-       *              corresponding registration once the listener has been notified 
-       *              for the registration. The detachListerner method must be called 
-       *              to detach listeners that are no longer in use.
-       */
-      public void notify( String layer, String appContext); 
-   }
+   
    
    /** A PrivilegedExceptionAction that looks up the class name identified
     * by the authcontextfactory.provider system property and loads the class 
@@ -316,7 +298,7 @@ public abstract class AuthConfigFactory
          if( name == null )
          {
             // Use the default factory impl
-            name = DEFAULT_FACTORY_NAME;
+            name = DEFAULT_FACTORY_SECURITY_PROPERTY;
          }
          ClassLoader loader = Thread.currentThread().getContextClassLoader();
          Class factoryClass = loader.loadClass(name);
