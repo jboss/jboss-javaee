@@ -34,22 +34,40 @@ package javax.security.auth.message;
 public class AuthStatus
 { 
    /**
-    * Indicates that the processing of the message by the 
-    * authentication module resulted in an error
+    * Indicates that the message processing by the authentication module 
+    * was NOT successful, and that the module replaced the application 
+    * message with an error message.
     */
-   public static final AuthStatus FAIL = new AuthStatus(-1);
+   public static final AuthStatus FAILURE = new AuthStatus(-1); 
    
    /**
-    * Indicates that the message processing runtime is to 
-    * continue with its normal processing of the message exchange.
+    * Indicates the message processing by the authentication module is 
+    * NOT complete, that the module replaced the application message 
+    * with a security message, and that the runtime is to proceed by 
+    * sending the security message.
     */
-   public static final AuthStatus PROCEED = new AuthStatus(1);
+   public static final AuthStatus SEND_CONTINUE = new AuthStatus(3);
    
    /**
-    * Indicates that the message processing runtime is to repeat 
-    * its processing of the message exchange.
+    * Indicates that the message processing by the authentication module
+    * was NOT successful, that the module replaced the application message 
+    * with an error message, and that the runtime is to proceed by sending 
+    * the error message.
     */
-   public static final AuthStatus RETRY =  new AuthStatus(0);
+   public static final AuthStatus SEND_FAILURE =  new AuthStatus(-2);
+   
+   /** Indicates that the message processing by the authentication module 
+    * was successful and that the runtime is to proceed by sending a message 
+    * returned by the authentication module.
+   */
+   public static final AuthStatus SEND_SUCCESS = new AuthStatus(2);
+   
+   /**
+    * Indicates that the message processing by the authentication module 
+    * was successful and that the runtime is to proceed with its normal processing 
+    * of the resulting message.
+    */
+   public static final AuthStatus SUCCESS = new AuthStatus(1);
    
    private int status = -1; 
    private AuthStatus(int status)
