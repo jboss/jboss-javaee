@@ -74,20 +74,22 @@
         <inherited>true</inherited>
         <executions>
           <execution>
-              <goals>
-                <goal>jar</goal>
-              </goals>
+            <goals>
+              <goal>jar</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
 
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.2-beta-1</version>
         <executions>
           <execution>
             <phase>package</phase>
             <goals>
-              <goal>assembly</goal>
+              <goal>attached</goal>
             </goals>
           </execution>
         </executions>
