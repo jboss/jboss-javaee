@@ -2,13 +2,13 @@
   <parent>
     <groupId>org.jboss.javaee</groupId>
     <artifactId>jboss-javaee</artifactId>
-    <version>5.0.0.Beta1</version>
+    <version>5.0.1-SNAPSHOT</version>
     <relativePath>../build/pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.javaee</groupId>
   <artifactId>jboss-jca-api</artifactId>
-  <version>1.5</version>
+  <version>1.6-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>JBoss J2EE Connector Architecture 1.5 API</name>
   <url>http://www.jboss.org</url>

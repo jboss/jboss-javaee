@@ -25,7 +25,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.javaee</groupId>
   <artifactId>jboss-javaee</artifactId>
-  <version>5.0.0.Beta1</version>
+  <version>5.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>JBoss JavaEE 5.0 Build</name>
   <url>http://www.jboss.com</url>
@@ -33,9 +33,9 @@
     The JBoss JavaEE API classes
   </description>
   <scm>
-    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/javaee/tags/5.0.0.Beta1</connection>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/javaee/tags/5.0.0.Beta1</developerConnection>
-    <url>http://viewvc.jboss.org/cgi-bin/viewvc.cgi/jbossas/projects/javaee/tags/5.0.0.Beta1</url>
+    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/javaee/trunk/</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/javaee/trunk/</developerConnection>
+    <url>http://viewvc.jboss.org/cgi-bin/viewvc.cgi/jbossas/projects/javaee/trunk/</url>
   </scm>
   <build>
     <sourceDirectory>src/main</sourceDirectory>
