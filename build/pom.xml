@@ -81,7 +81,6 @@
         <version>2.2-beta-1</version>
         <executions>
           <execution>
-            <phase>package</phase>
             <goals>
               <goal>attached</goal>
             </goals>
