@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.javaee</groupId>
   <artifactId>jboss-jad-api</artifactId>
-  <version>1.2</version>
+  <version>1.2-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>JBoss JavaEE Application Deployment 1.2 API</name>
   <url>http://www.jboss.org</url>
