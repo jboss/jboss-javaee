@@ -16,7 +16,8 @@
   To add a module edit the modules section and add the module also to 
   assembly/bin.xml and assembly.sources.xml.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>jboss-parent</artifactId>
@@ -25,7 +26,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.javaee</groupId>
   <artifactId>jboss-javaee</artifactId>
-  <version>5.0.0.Beta3</version>
+  <version>5.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>JBoss JavaEE 5.0 Build</name>
   <url>http://www.jboss.com</url>
@@ -33,9 +34,9 @@
     The JBoss JavaEE API classes
   </description>
   <scm>
-    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/javaee/tags/5.0.0.Beta3</connection>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/javaee/tags/5.0.0.Beta3</developerConnection>
-    <url>http://viewvc.jboss.org/cgi-bin/viewvc.cgi/jbossas/javaee/tags/5.0.0.Beta3</url>
+    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/javaee/trunk/</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/javaee/trunk/</developerConnection>
+    <url>http://viewvc.jboss.org/cgi-bin/viewvc.cgi/jbossas/projects/javaee/trunk/</url>
   </scm>
   <build>
     <sourceDirectory>src/main</sourceDirectory>
@@ -124,7 +125,7 @@
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
-           <tagBase>https://svn.jboss.org/repos/jbossas/javaee/tags</tagBase>
+           <tagBase>https://svn.jboss.org/repos/jbossas/projects/javaee/tags</tagBase>
         </configuration>
       </plugin>
     </plugins>
