@@ -35,7 +35,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.javaee</groupId>
   <artifactId>jboss-javaee</artifactId>
-  <version>5.0.0.Beta3</version>
+  <version>5.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>JBoss JavaEE 5.0 Build</name>
   <url>http://www.jboss.com</url>
@@ -49,7 +49,7 @@
 
   <properties>
     <!-- The unique build id for the javaee release -->
-    <build.id>20070913080910</build.id>
+    <build.id>-SNAPSHOT</build.id>
     <version.jboss.common.core>2.2.1.GA</version.jboss.common.core>
     <version.jboss-ejb-api>3.0.0.${build.id}</version.jboss-ejb-api>
     <version.jboss-jacc-api>1.1.0.${build.id}</version.jboss-jacc-api>
