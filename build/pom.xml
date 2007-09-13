@@ -54,7 +54,7 @@
     <version.jboss-ejb-api>3.0.0.${build.id}</version.jboss-ejb-api>
     <version.jboss-jacc-api>1.1.0.${build.id}</version.jboss-jacc-api>
     <version.jboss-jad-api>1.2.0.${build.id}</version.jboss-jad-api>
-    <version.jboss-jaspi-api>1.0.0.BETA1-${build.id}</version.jboss-jaspi-api>
+    <version.jboss-jaspi-api>1.0.0.${build.id}</version.jboss-jaspi-api>
     <version.jboss-jaxr-api>1.0.0.${build.id}</version.jboss-jaxr-api>
     <version.jboss-jaxs-api>1.2.0.${build.id}</version.jboss-jaxs-api>
     <version.jboss-jca-api>1.5.0.${build.id}</version.jboss-jca-api>
