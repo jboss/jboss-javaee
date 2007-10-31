@@ -48,11 +48,20 @@
   </scm>
 
   <properties>
-    <!-- The unique build id for the javaee release.
-			-  This id should start with a dot "." or a dash.
-			-->
+    <!-- The unique build id for the javaee release -->
     <build.id>-SNAPSHOT</build.id>
     <version.jboss.common.core>2.2.1.GA</version.jboss.common.core>
+    <version.jboss-ejb-api>3.0.0${build.id}</version.jboss-ejb-api>
+    <version.jboss-jacc-api>1.1.0${build.id}</version.jboss-jacc-api>
+    <version.jboss-jad-api>1.2.0${build.id}</version.jboss-jad-api>
+    <version.jboss-jaspi-api>1.0.0${build.id}</version.jboss-jaspi-api>
+    <version.jboss-jaxr-api>1.0.0${build.id}</version.jboss-jaxr-api>
+    <version.jboss-jaxs-api>1.2.0${build.id}</version.jboss-jaxs-api>
+    <version.jboss-jca-api>1.5.0${build.id}</version.jboss-jca-api>
+    <version.jboss-jms-api>1.1.0${build.id}</version.jboss-jms-api>
+    <version.jboss-persistence-api>3.0.0${build.id}</version.jboss-persistence-api>
+    <version.jboss-servlet-api>2.5.0${build.id}</version.jboss-servlet-api>
+    <version.jboss-transaction-api>1.0.1${build.id}</version.jboss-transaction-api>
   </properties>
 
   <build>

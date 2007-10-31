@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.javaee</groupId>
   <artifactId>jboss-servlet-api</artifactId>
-  <version>2.5.0${build.id}</version>
+  <version>${version.jboss-servlet-api}</version>
   <packaging>jar</packaging>
   <name>JBoss Java Servlet 2.5 API</name>
   <url>http://www.jboss.org</url>
