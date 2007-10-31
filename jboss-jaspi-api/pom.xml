@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jboss.javaee</groupId>
   <artifactId>jboss-jaspi-api</artifactId>
-  <version>${version.jboss-jaspi-api}</version>
+  <version>1.0.0${build.id}</version>
   <packaging>jar</packaging>
   <name>JBoss Java Authentication SPI for Containers 1.0-PR API</name>
   <url>http://www.jboss.org</url>
