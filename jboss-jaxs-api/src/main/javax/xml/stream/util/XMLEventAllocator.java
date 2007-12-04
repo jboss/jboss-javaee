@@ -42,6 +42,12 @@ public interface XMLEventAllocator
 {
 
    /**
+    * This method creates an instance of the XMLEventAllocator. This
+    * allows the XMLInputFactory to allocate a new instance per reader.
+    */
+   public XMLEventAllocator newInstance();
+
+   /**
     * This method allocates an event given the current state of the
     * XMLStreamReader. If this XMLEventAllocator does not have a one-to-one
     * mapping between reader states and events this method will return null.

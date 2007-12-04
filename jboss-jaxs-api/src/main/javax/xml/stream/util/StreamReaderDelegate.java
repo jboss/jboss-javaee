@@ -40,7 +40,7 @@ import javax.xml.stream.XMLStreamReader;
  * @see javax.xml.stream.XMLStreamReader
  * @see EventReaderDelegate
  */
-public class StreamReaderDelegate
+public class StreamReaderDelegate implements XMLStreamReader
 {
 
    private XMLStreamReader reader;

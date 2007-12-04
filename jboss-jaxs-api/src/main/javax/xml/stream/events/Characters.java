@@ -31,7 +31,7 @@ package javax.xml.stream.events;
  * @author Jason T. Greene
  * @version $Id$
  */
-public interface Characters
+public interface Characters extends XMLEvent
 {
    /**
     * Get the character data of this event
