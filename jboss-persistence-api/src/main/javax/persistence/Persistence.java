@@ -1,4 +1,4 @@
-// $Id: Persistence.java 11282 2007-03-14 22:05:59Z epbernard $
+// $Id: Persistence.java 14134 2007-10-25 22:34:46Z epbernard $
 package javax.persistence;
 
 import java.io.BufferedReader;
@@ -19,7 +19,8 @@ import javax.persistence.spi.PersistenceProvider;
  */
 public class Persistence {
 
-	public static String PERSISTENCE_PROVIDER = PersistenceProvider.class.getName();
+	//typo intended because it leaked into the JPA 1 spec. Do not use this constant.
+	public static final java.lang.String PERSISTENCE_PROVIDER = "javax.persistence.spi.PeristenceProvider";
 
 	protected static final Set<PersistenceProvider> providers = new HashSet<PersistenceProvider>();
 
