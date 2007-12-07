@@ -6,43 +6,43 @@
   <includeBaseDirectory>false</includeBaseDirectory>
   <fileSets>
     <fileSet>
-      <directory>../jboss-ejb-api/src/main</directory>
+      <directory>jboss-ejb-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../jboss-jacc-api/src/main</directory>
+      <directory>jboss-jacc-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../jboss-jad-api/src/main</directory>
+      <directory>jboss-jad-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../jboss-jaxr-api/src/main</directory>
+      <directory>jboss-jaxr-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../jboss-jaxs-api/src/main</directory>
+      <directory>jboss-jaxs-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../jboss-jca-api/src/main</directory>
+      <directory>jboss-jca-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../jboss-jms-api/src/main</directory>
+      <directory>jboss-jms-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../jboss-persistence-api/src/main</directory>
+      <directory>jboss-persistence-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../jboss-servlet-api/src/main</directory>
+      <directory>jboss-servlet-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>../jboss-transaction-api/src/main</directory>
+      <directory>jboss-transaction-api/src/main</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
   </fileSets>
