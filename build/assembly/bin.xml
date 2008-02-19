@@ -21,10 +21,6 @@
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>jboss-jaxs-api/target/classes</directory>
-      <outputDirectory>/</outputDirectory>
-    </fileSet>
-    <fileSet>
       <directory>jboss-jca-api/target/classes</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>

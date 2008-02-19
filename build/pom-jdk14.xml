@@ -203,7 +203,6 @@
     <module>../jboss-jacc-api</module>
     <module>../jboss-jad-api</module>
     <module>../jboss-jaxr-api</module>
-    <module>../jboss-jaxs-api</module>
     <module>../jboss-jca-api</module>
     <module>../jboss-jms-api</module>
     <module>../jboss-persistence-api</module>
