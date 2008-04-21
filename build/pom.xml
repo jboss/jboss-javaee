@@ -20,7 +20,7 @@
   </scm>
 
   <properties>
-    <version.jboss.common.core>2.2.1.GA</version.jboss.common.core>
+    <version.jboss.common.core>2.2.5.GA</version.jboss.common.core>
   </properties>
 
   <build>
