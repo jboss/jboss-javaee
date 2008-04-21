@@ -21,6 +21,7 @@
 
   <properties>
     <version.jboss.common.core>2.2.5.GA</version.jboss.common.core>
+    <version.jboss.logging.spi>2.0.5.GA</version.jboss.logging.spi>
   </properties>
 
   <build>
@@ -129,6 +130,12 @@
         <artifactId>jboss-common-core</artifactId>
         <version>${version.jboss.common.core}</version>
       </dependency>
+      
+      <dependency>
+        <groupId>org.jboss.logging</groupId>
+        <artifactId>jboss-logging-spi</artifactId>
+        <version>${version.jboss.logging.spi}</version>
+      </dependency>      
     </dependencies>
   </dependencyManagement>
 
