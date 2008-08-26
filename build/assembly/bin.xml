@@ -29,10 +29,6 @@
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
-      <directory>jboss-persistence-api/target/classes</directory>
-      <outputDirectory>/</outputDirectory>
-    </fileSet>
-    <fileSet>
       <directory>jboss-servlet-api/target/classes</directory>
       <outputDirectory>/</outputDirectory>
     </fileSet>
