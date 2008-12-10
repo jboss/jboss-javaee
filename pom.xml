@@ -16,8 +16,8 @@
     The JBoss JavaEE API classes
   </description>
   <scm>
-    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/javaee/trunk</connection>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/javaee/trunk</developerConnection>
+    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/javaee/branches/Branch_5_0</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/javaee/branches/Branch_5_0</developerConnection>
   </scm>
 
   <modules>
