@@ -28,7 +28,6 @@
     <module>jboss-jaxr-api</module>
     <module>jboss-jca-api</module>
     <module>jboss-jms-api</module>
-    <module>jboss-servlet-api</module>
     <module>jboss-transaction-api</module>
     <module>jboss-jaspi-api</module>
   </modules>
