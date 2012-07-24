@@ -2,13 +2,10 @@
   <parent>
     <groupId>org.jboss.javaee</groupId>
     <artifactId>jboss-javaee-parent</artifactId>
-    <version>5.1.0-SNAPSHOT</version>
-    <relativePath>../build/pom.xml</relativePath>
+    <version>5.0.2-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.jboss.javaee</groupId>
-  <artifactId>jboss-jms-api</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <artifactId>jboss-jms-api-1.1_spec</artifactId>
   <packaging>jar</packaging>
   <name>JBoss JMS 1.1 API</name>
   <url>http://www.jboss.org</url>

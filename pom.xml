@@ -1,27 +1,35 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <parent>
-    <groupId>org.jboss.javaee</groupId>
-    <artifactId>jboss-javaee-parent</artifactId>
-    <version>5.1.0-SNAPSHOT</version>
-    <relativePath>build/pom.xml</relativePath>
+    <groupId>org.jboss</groupId>
+    <artifactId>jboss-parent</artifactId>
+    <version>3</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
   <groupId>org.jboss.javaee</groupId>
-  <artifactId>jboss-javaee</artifactId>
-  <version>5.1.0-SNAPSHOT</version>
+  <artifactId>jboss-javaee-parent</artifactId>
+  <version>5.0.2-SNAPSHOT</version>
+  <modelVersion>4.0.0</modelVersion>
+  
   <packaging>pom</packaging>
-  <name>JBoss JavaEE 5.0 Aggregate</name>
+  <name>JBoss JavaEE 5.0 Parent</name>
   <url>http://www.jboss.com</url>
   <description>
     The JBoss JavaEE API classes
   </description>
-  <scm>
-    <connection>scm:svn:http://anonsvn.jboss.org/repos/jbossas/projects/javaee/branches/Branch_5_0</connection>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/jbossas/projects/javaee/branches/Branch_5_0</developerConnection>
-  </scm>
+  
+  <properties>
+    <version.javax.activation>1.0.2</version.javax.activation>
+    <version.jboss.common.core>2.2.8.GA</version.jboss.common.core>
+    <version.jboss.logging.spi>2.0.5.GA</version.jboss.logging.spi>
+    <version.jboss.web>2.1.1.GA</version.jboss.web>
+    <version.jboss.ws.native>3.0.4.GA</version.jboss.ws.native>
+    <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
+    <jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
+  </properties>
+  
 
   <modules>
-    <module>build</module>
     <module>jboss-ejb-api</module>
     <module>jboss-jacc-api</module>
     <module>jboss-jad-api</module>
@@ -32,61 +40,165 @@
     <module>jboss-jaspi-api</module>
   </modules>
   
-  <profiles>
-    <profile>
-      <id>assembly</id>
-      <activation>
-        <property>
-          <name>!skip.assembly</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <version>2.2-beta-1</version>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>attached</goal>
-                </goals>
-                <phase>package</phase>
-              </execution>
-            </executions>
-            <configuration>
-              <descriptors>
-                <descriptor>build/assembly/bin.xml</descriptor>
-                <descriptor>build/assembly/sources.xml</descriptor>
-              </descriptors>
-            </configuration>
-            <inherited>false</inherited>
-          </plugin>
-          <plugin>
-            <artifactId>maven-release-plugin</artifactId>
-            <configuration>
-               <tagBase>https://svn.jboss.org/repos/jbossas/projects/javaee/tags</tagBase>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.jboss.maven.plugins</groupId>
-            <artifactId>maven-jboss-deploy-plugin</artifactId>
-            <version>1.4</version>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>jboss-deploy</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <jbossDeployRoot>${jboss.repository.root}</jbossDeployRoot>
-              <groupId>jboss</groupId>
-            </configuration>
-            <inherited>true</inherited>
-          </plugin>
-        </plugins>    
-      </build>
-    </profile>
-  </profiles>
+  <dependencyManagement>
+    <dependencies>
+     <dependency>
+      <groupId>org.jboss.javaee</groupId>
+      <artifactId>jboss-transaction-api-1.0.1_spec</artifactId>
+      <version>${version.jboss.transaction-api}</version>
+     </dependency>
+     <dependency>
+      <groupId>org.jboss</groupId>
+      <artifactId>jboss-common-core</artifactId>
+      <version>${version.jboss.common.core}</version>
+      <scope>provided</scope>
+    </dependency>  
+    <dependency>
+      <groupId>org.jboss.logging</groupId>
+      <artifactId>jboss-logging-spi</artifactId>
+      <version>${version.jboss.logging.spi}</version>
+      <scope>provided</scope>
+    </dependency> 
+     <dependency>
+      <groupId>jboss.web</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>${version.jboss.web}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.ws.native</groupId>
+      <artifactId>jbossws-native-jaxrpc</artifactId>
+      <version>${version.jboss.ws.native}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>${version.javax.activation}</version>
+      <scope>provided</scope>
+    </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+  <build>
+    <sourceDirectory>src/main</sourceDirectory>
+    <testSourceDirectory>src/tests</testSourceDirectory>
+    <finalName>${artifactId}</finalName>
+    <testResources>
+      <testResource>
+        <directory>src/resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+    <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+          <!-- if set to true, this makes compilation fail due to deprecation.... -->
+          <showDeprecation>false</showDeprecation>
+          <showWarnings>false</showWarnings>
+          <optimize>true</optimize>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.0</version>
+        <inherited>true</inherited>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <printSummary>false</printSummary>
+          <testFailureIgnore>true</testFailureIgnore>
+          <includes>
+            <include>**/**TestCase.java</include>
+          </includes>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>dependencies</report>
+              <report>issue-tracking</report>
+              <report>license</report>
+              <report>scm</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+  
+  <repositories>
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+  
+  <scm>
+     <connection>scm:git:git@github.com:jboss/jboss-javaee.git</connection>
+     <developerConnection>scm:git:git@github.com:jboss/jboss-javaee.git</developerConnection>
+     <url>https://github.com/jboss/jboss-javaee.git</url>
+  </scm>
+  
+  <distributionManagement>
+    <repository>
+      <id>jboss-releases-repository</id>
+      <name>JBoss Releases Repository</name>
+      <url>${jboss.releases.repo.url}</url>
+    </repository>
+    <snapshotRepository>
+      <id>jboss-snapshots-repository</id>
+      <name>JBoss Snapshots Repository</name>
+      <url>${jboss.snapshots.repo.url}</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>

@@ -1,2 +1,0 @@
-To package the whole stuff:
-mvn package assembly:assembly
