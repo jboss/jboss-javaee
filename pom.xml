@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.jboss</groupId>
     <artifactId>jboss-parent</artifactId>
-    <version>3</version>
+    <version>9</version>
   </parent>
 
   <groupId>org.jboss.javaee</groupId>
@@ -24,8 +24,6 @@
     <version.jboss.logging.spi>2.0.5.GA</version.jboss.logging.spi>
     <version.jboss.web>2.1.1.GA</version.jboss.web>
     <version.jboss.ws.native>3.0.4.GA</version.jboss.ws.native>
-    <jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
-    <jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
   </properties>
   
 
@@ -94,31 +92,6 @@
       </testResource>
     </testResources>
     <plugins>
-        <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.0.2</version>
-        <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
-          <!-- if set to true, this makes compilation fail due to deprecation.... -->
-          <showDeprecation>false</showDeprecation>
-          <showWarnings>false</showWarnings>
-          <optimize>true</optimize>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.0</version>
-        <inherited>true</inherited>
-        <executions>
-          <execution>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
@@ -167,6 +140,25 @@
                 <updatePolicy>never</updatePolicy>
             </snapshots>
         </repository>
+        <repository>
+	      <id>jboss</id>
+	      <name>JBoss Repository</name>
+	      <url>http://repository.jboss.org/maven2</url>
+	      <snapshots>
+	        <enabled>false</enabled>
+	      </snapshots>
+	    </repository>
+	    <repository>
+	      <id>jboss-snapshots</id>
+	      <name>JBoss Snapshot Repository</name>
+	      <url>http://snapshots.jboss.org/maven2</url>
+	      <releases>
+	        <enabled>false</enabled>
+	      </releases>
+	      <snapshots>
+	        <enabled>true</enabled>
+	      </snapshots>
+	    </repository>
     </repositories>
 
     <pluginRepositories>
@@ -188,17 +180,4 @@
      <developerConnection>scm:git:git@github.com:jboss/jboss-javaee.git</developerConnection>
      <url>https://github.com/jboss/jboss-javaee.git</url>
   </scm>
-  
-  <distributionManagement>
-    <repository>
-      <id>jboss-releases-repository</id>
-      <name>JBoss Releases Repository</name>
-      <url>${jboss.releases.repo.url}</url>
-    </repository>
-    <snapshotRepository>
-      <id>jboss-snapshots-repository</id>
-      <name>JBoss Snapshots Repository</name>
-      <url>${jboss.snapshots.repo.url}</url>
-    </snapshotRepository>
-  </distributionManagement>
 </project>
