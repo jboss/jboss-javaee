@@ -59,7 +59,7 @@ public interface ClientAuthConfig extends AuthConfig
     * returned ClientAuthContext instance.</p>
     * <p>The ClientAuthConfig object establishes the request and response MessagePolicy 
     * objects that are passed to the encapsulated modules when they are initialized by the 
-    * returned ClientAuthContext instance. It is the modules’ responsibility to enforce 
+    * returned ClientAuthContext instance. It is the modules responsibility to enforce 
     * these policies when invoked.</p>
     * 
     * @param operation an operation identifier used to index the provided config, or null. 

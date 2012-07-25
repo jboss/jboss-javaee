@@ -45,7 +45,7 @@ public class PasswordValidationCallback implements Callback
     * Create a new PasswordValidationCallback.
     * 
     * @param username the username to authenticate
-    * @param password the user’s password, which may be null.
+    * @param password the users password, which may be null.
     */
    public PasswordValidationCallback(Subject subject, String username, char[] password)
    {
@@ -65,7 +65,7 @@ public class PasswordValidationCallback implements Callback
    /**
     * Get the password.
     * <b>Note</b> that this method returns a reference to the password. If a clone 
-    * of the array is created it is the caller’s responsibility to zero out 
+    * of the array is created it is the callers responsibility to zero out 
     * the password information after it is no longer needed.
     * 
     * @return the password, which may be null.

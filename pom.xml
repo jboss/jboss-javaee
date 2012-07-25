@@ -81,7 +81,7 @@
   <build>
     <sourceDirectory>src/main</sourceDirectory>
     <testSourceDirectory>src/tests</testSourceDirectory>
-    <finalName>${artifactId}</finalName>
+    <finalName>${project.artifactId}</finalName>
     <testResources>
       <testResource>
         <directory>src/resources</directory>
@@ -111,6 +111,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.0.1</version>
         <reportSets>
           <reportSet>
             <reports>

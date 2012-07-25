@@ -33,7 +33,7 @@ import javax.security.auth.message.MessagePolicy;
  *  response messages.</p>
  *  <p>A module implementation should assume it may be used to secure different 
  *  requests as different clients. A module should also assume it may be used 
- *  concurrently by multiple callers. It is the module implementation’s responsibility 
+ *  concurrently by multiple callers. It is the module implementations responsibility 
  *  to properly save and restore any state as necessary. A module that does not need 
  *  to do so may remain completely stateless. </p>
  *  

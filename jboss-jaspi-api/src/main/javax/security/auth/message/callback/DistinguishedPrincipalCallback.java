@@ -29,7 +29,7 @@ import javax.security.auth.callback.Callback;
 //$Id$
 
 /**
- *  Callback for setting the container’s caller (or Remote user) principal.
+ *  Callback for setting the containers caller (or Remote user) principal.
  *  @author <a href="mailto:Anil.Saldhana@jboss.org">Anil Saldhana</a>
  *  @author Charlie Lai, Ron Monzillo (Javadoc for JSR-196)
  *  @since  May 11, 2006 

@@ -78,7 +78,7 @@ public interface AuthConfigProvider
     *               encapsulated by ClientAuthContext objects derived from the 
     *               returned ClientAuthConfig. This parameter may be null, in which 
     *               case the implementation may assign a default handler to the 
-    *               configuration. The “authconfigprovider.client.callbackhandler” 
+    *               configuration. The "authconfigprovider.client.callbackhandler" 
     *               security property is used to define the fully qualified name of 
     *               the default CallbackHandler implementation class.
     * @return a ClientAuthConfig Object that describes the configuration of 
@@ -107,7 +107,7 @@ public interface AuthConfigProvider
     *               encapsulated by ServerAuthContext objects derived from the 
     *               returned ServerAuthConfig. This parameter may be null, in which 
     *               case the implementation may assign a default handler to the 
-    *               configuration. The “authconfigprovider.client.callbackhandler” 
+    *               configuration. The "authconfigprovider.client.callbackhandler" 
     *               security property is used to define the fully qualified name of 
     *               the default CallbackHandler implementation class.
     * @return a ServerAuthConfig Object that describes the configuration of 

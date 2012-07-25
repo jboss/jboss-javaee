@@ -57,7 +57,7 @@ public interface ServerAuthConfig extends AuthConfig
     * returned ServerAuthContext instance.</p>
     * <p>The ServerAuthConfig object establishes the request and response MessagePolicy 
     * objects that are passed to the encapsulated modules when they are initialized by 
-    * the returned ServerAuthContext instance. It is the modules’ responsibility to 
+    * the returned ServerAuthContext instance. It is the modules responsibility to 
     * enforce these policies when invoked.</p>
     * 
     * @param operation an operation identifier used to index the provided config, or null. 

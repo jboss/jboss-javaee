@@ -147,7 +147,7 @@ public abstract class AuthConfigFactory
     * e.g., with setfactory, it will be returned. Otherwise, an attempt will be made to 
     * construct an instance of the default AuthConfigFactory implementation class. The 
     * fully qualified class name of the default factory implementation class is obtained
-    * from the value of the “authconfigprovider.factory” security property.  When an 
+    * from the value of the "authconfigprovider.factory" security property.  When an 
     * instance of the defaultfactory implementation class is successfully constructed by 
     * this method, this method will set it as the system-wide factory instance.</p>
     * 
