@@ -448,7 +448,7 @@ public final class WebResourcePermission
       
       for(String httpMethod: matchingExceptionList)
       {
-         if(myExceptionList.contains(httpMethod))
+         if(!myExceptionList.contains(httpMethod))
             return false;
       }
       return true;
