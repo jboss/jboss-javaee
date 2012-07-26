@@ -2,7 +2,7 @@
   <parent>
     <groupId>org.jboss.javaee</groupId>
     <artifactId>jboss-javaee-parent</artifactId>
-    <version>5.0.2.GA</version>
+    <version>5.0.3-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>jboss-jms-api-1.1_spec</artifactId>
